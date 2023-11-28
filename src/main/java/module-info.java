@@ -8,7 +8,7 @@ module com.example.demo {
 
     opens com.test to javafx.fxml;
     exports com.test;
-    opens com.test.view to javafx.fxml;
     exports com.test.controller;
     opens com.test.controller to javafx.fxml;
+    exports com.test.view;
 }
