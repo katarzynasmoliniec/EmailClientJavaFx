@@ -8,6 +8,9 @@ import javafx.scene.control.TreeView;
 import javafx.scene.web.WebView;
 
 public class MainWindowController extends BaseController {
+    public MainWindowController(EmailManager emailManager, ViewFactory viewFactory, String fxmlName) {
+        super(emailManager, viewFactory, fxmlName);
+    }
 
     @FXML
     private WebView emailWebView;
@@ -18,11 +21,8 @@ public class MainWindowController extends BaseController {
     @FXML
     private TreeView<?> emailsTreeView;
 
-    public MainWindowController(EmailManager emailManager, ViewFactory viewFactory, String fxmlName) {
-        super(emailManager, viewFactory, fxmlName);
-    }
-
     @FXML
     void optionsAction() {
+        viewFactory.showOptionsWindow();
     }
 }
