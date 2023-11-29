@@ -1,0 +1,41 @@
+*{
+    -fx-background-color: #2f2f2f;
+}
+.big{
+   -fx-font-size: 16pt;
+   -fx-text-fill: white;
+}
+Label, Slider, ChoiceBox {
+    -fx-text-fill: #f6f6f6;
+}
+Button {
+    -fx-background-color: #f7bd5c;
+    -fx-text-fill: #111111;
+}
+Button:hover {
+    -fx-background-color: #d19838;
+}
+ChoiceBox > * {
+    -fx-background-color: #f7bd5c;
+    -fx-text-fill: #111111;
+}
+ChoiceBox .menu-item >.label {
+    -fx-text-fill: white;
+}
+ChoiceBox .menu-item:focused >.label {
+    -fx-background-color: #f7bd5c;
+    -fx-text-fill: #111111;
+}
+
+Slider .axis {
+    -fx-tick-label-fill: white;
+}
+Slider .track {
+    -fx-background-color: #f7bd5c;
+}
+Slider .track:hover {
+    -fx-background-color: #d19838;
+}
+Slider .thumb {
+    -fx-background-color: #545353;
+}
