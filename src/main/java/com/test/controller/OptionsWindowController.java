@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Slider;
+import javafx.stage.Stage;
 import javafx.util.StringConverter;
 
 import java.net.URL;
@@ -27,12 +28,15 @@ public class OptionsWindowController extends BaseController implements Initializ
 
     @FXML
     void applyBtnAction() {
-
+        viewFactory.setColorTheme(themePicker.getValue());
+        viewFactory.setFontSize(FontSize.values()[(int) (fontSizePicker.getValue())]);
+        viewFactory.updateStyle();
     }
 
     @FXML
     void cancelBtnAction() {
-
+        Stage stage = (Stage) fontSizePicker.getScene().getWindow();
+        viewFactory.closeStage(stage);
     }
 
     @Override
@@ -43,7 +47,7 @@ public class OptionsWindowController extends BaseController implements Initializ
 
     private void setUpSizePicker() {
         fontSizePicker.setMin(0);
-        fontSizePicker.setMax(FontSize.values().length -1);
+        fontSizePicker.setMax(FontSize.values().length - 1);
         fontSizePicker.setValue(viewFactory.getFontSize().ordinal());
         fontSizePicker.setMajorTickUnit(1);
         fontSizePicker.setMinorTickCount(0);
@@ -57,6 +61,7 @@ public class OptionsWindowController extends BaseController implements Initializ
                 int i = object.intValue();
                 return FontSize.values()[i].toString();
             }
+
             @Override
             public Double fromString(String s) {
                 return null;
