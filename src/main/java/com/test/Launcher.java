@@ -3,7 +3,6 @@ package com.test;
 import com.test.view.ViewFactory;
 import javafx.application.Application;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
 public class Launcher extends Application {
