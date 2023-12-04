@@ -5,6 +5,8 @@ module com.example.demo {
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
     requires java.mail;
+    requires java.desktop;
+    requires activation;
 
     opens com.test to javafx.fxml;
     exports com.test;
