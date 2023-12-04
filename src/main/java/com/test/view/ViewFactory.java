@@ -45,26 +45,22 @@ public class ViewFactory {
     }
 
     public void showComposeMessageWindow() {
-        System.out.println("show compose message");
         BaseController controller = new ComposeMessageController(emailManager, this, "ComposeMessageWindow.fxml");
         initializeStage(controller);
     }
 
     public void showLoginWindow() {
-        System.out.println("show login");
         BaseController controller = new LoginWindowController(emailManager, this, "LoginWindow.fxml");
         initializeStage(controller);
     }
 
     public void showMainWindow() {
-        System.out.println("show main");
         BaseController controller = new MainWindowController(emailManager, this, "MainWindow.fxml");
         initializeStage(controller);
         mainViewInitialized = true;
     }
 
     public void showOptionsWindow() {
-        System.out.println("show options");
         BaseController controller = new OptionsWindowController(emailManager, this, "OptionsWindow.fxml");
         initializeStage(controller);
     }
@@ -91,12 +87,15 @@ public class ViewFactory {
         activeStage.remove(stageToClose);
     }
 
-    public void updateStyle() {
+    public void updateAllStyle() {
         for (Stage stage : activeStage) {
             Scene scene = stage.getScene();
+            updateStyle(scene);
+            }
+    }
+    public void updateStyle(Scene scene) {
             scene.getStylesheets().clear();
             scene.getStylesheets().add(getClass().getResource(ColorTheme.getCssPath(colorTheme)).toExternalForm());
             scene.getStylesheets().add(getClass().getResource(FontSize.getCssPath(fontSize)).toExternalForm());
         }
-    }
 }
