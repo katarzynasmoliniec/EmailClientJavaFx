@@ -1,10 +1,7 @@
 package com.test.view;
 
 import com.test.EmailManager;
-import com.test.controller.BaseController;
-import com.test.controller.LoginWindowController;
-import com.test.controller.MainWindowController;
-import com.test.controller.OptionsWindowController;
+import com.test.controller.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -45,6 +42,12 @@ public class ViewFactory {
 
     public void setFontSize(FontSize fontSize) {
         this.fontSize = fontSize;
+    }
+
+    public void showComposeMessageWindow() {
+        System.out.println("show compose message");
+        BaseController controller = new ComposeMessageController(emailManager, this, "ComposeMessageWindow.fxml");
+        initializeStage(controller);
     }
 
     public void showLoginWindow() {
