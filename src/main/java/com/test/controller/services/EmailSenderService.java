@@ -5,12 +5,14 @@ import com.test.model.EmailAccount;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
 
+import javax.activation.DataHandler;
+import javax.activation.DataSource;
+import javax.activation.FileDataSource;
 import javax.mail.*;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import java.io.File;
-import javax.activation.*;
 import java.util.List;
 
 public class EmailSenderService extends Service<EmailSendingResult> {
