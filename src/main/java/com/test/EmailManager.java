@@ -8,7 +8,6 @@ import com.test.model.EmailTreeItem;
 import com.test.view.IconResolver;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
 import javax.mail.Flags;
 import javax.mail.Folder;
 import java.util.ArrayList;

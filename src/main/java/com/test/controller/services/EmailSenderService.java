@@ -4,7 +4,6 @@ import com.test.controller.EmailSendingResult;
 import com.test.model.EmailAccount;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
-
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
